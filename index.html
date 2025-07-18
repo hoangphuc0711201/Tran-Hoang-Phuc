@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Thiếp Kỹ Sư Xây Dựng</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        
+        .card {
+            width: 500px;
+            height: 300px;
+            perspective: 1000px;
+            position: relative;
+        }
+        
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s;
+            transform: rotateY(0deg);
+        }
+        
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .card-front {
+            background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+            color: white;
+        }
+        
+        .card-back {
+            background: white;
+            color: #333;
+            transform: rotateY(180deg);
+            overflow-y: auto;
+        }
+        
+        .title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+        
+        .divider {
+            width: 50px;
+            height: 3px;
+            background-color: rgba(255, 255, 255, 0.5);
+            margin: 10px 0;
+        }
+        
+        .skill-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .skill-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            background-color: #3a7bd5;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 0.7rem;
+        }
+        
+        .construction-icon {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            opacity: 0.1;
+            font-size: 4rem;
+        }
+        
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="card animate-pulse">
+        <div class="card-inner">
+            <!-- Mặt trước danh thiếp -->
+            <div class="card-front">
+                <div>
+                    <div class="title">KỸ SƯ XÂY DỰNG</div>
+                    <div class="subtitle">Mới tốt nghiệp - Nhiệt huyết</div>
+                    <div class="divider"></div>
+                </div>
+                
+                <div class="flex items-center">
+                    <div class="mr-4">
+                    </div>
+                    <div>
+                        <div class="font-bold text-lg">TRẦN HOÀNG PHÚC</div>
+                        <div class="text-sm">Tốt nghiệp 2023</div>
+                    </div>
+                </div>
+                
+                <div class="construction-icon">🏗️</div>
+            </div>
+            
+            <!-- Mặt sau danh thiếp -->
+            <div class="card-back">
+                <div>
+                    <div class="text-xl font-bold text-blue-600 mb-3">THÔNG TIN CÁ NHÂN</div>
+                    <div class="text-sm mb-4">
+                     Tôi là kỹ sư mới ra trường – chưa nhiều kinh nghiệm, nhưng nhiều tinh thần. Tôi học nhanh, làm thật, không ngại khó, chẳng sợ lăn xăn. Dù chưa chuyên sâu vị trí nào, tôi sẵn sàng thích nghi từ xách nước đến bổ cam, từ hiện trường đến văn phòng..
+                    </div>
+                    
+                    <div class="text-lg font-semibold text-blue-600 mb-2">KỸ NĂNG CHÍNH</div>
+                    <div class="skill-item">
+                        <div class="skill-icon">✓</div>
+                        <div>Bóc tách khối lượng bằng AutoCAD & Excel</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">✓</div>
+                        <div>Lập tiến độ thi công</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">✓</div>
+                        <div>Đọc và hiểu bản vẽ kỹ thuật</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">✓</div>
+                        <div>Ứng dụng AI trong Xây dựng</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">✓</div>
+                        <div>Tiếng Anh kỹ thuật</div>
+                    </div>
+                    
+                    <div class="mt-3 text-sm italic">
+                      Với tôi, công việc không chỉ là lương – mà là lộ trình trưởng thành cùng đội ngũ. Chỉ cần anh/chị muốn đào tạo, tôi sẵn sàng trở thành bất kỳ kỹ sư nào công ty cần..
+                    </div>
+                </div>
+                
+                <div class="flex justify-between items-center text-xs text-gray-500">
+                    <div>Email: hoang.tranphuc01@gmail.com</div>
+                    <div>Tel: 0931435917</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Thêm hiệu ứng chuyển động ngẫu nhiên
+        document.addEventListener('mousemove', (e) => {
+            const card = document.querySelector('.card');
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+            card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+        
+        // Reset vị trí khi chuột rời khỏi card
+        document.querySelector('.card').addEventListener('mouseleave', () => {
+            document.querySelector('.card').style.transform = 'rotateY(0deg) rotateX(0deg)';
+        });
+    </script>
+</body>
+</html>
